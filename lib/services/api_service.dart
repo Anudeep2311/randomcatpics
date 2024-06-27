@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 
 import 'package:catdemo/models/random_image_model.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main(List<String> arguments) async {
@@ -12,11 +13,11 @@ void main(List<String> arguments) async {
     var jsonResponse = convert.jsonDecode(response.body);
 
     var randomModel = RandomModel.fromJson(jsonResponse[0]);
-    print('ID: ${randomModel.id}');
-    print('URL: ${randomModel.url}');
-    print('Width: ${randomModel.width}');
-    print('Height: ${randomModel.height}');
+    debugPrint('ID: ${randomModel.id}');
+    debugPrint('URL: ${randomModel.url}');
+    debugPrint('Width: ${randomModel.width}');
+    debugPrint('Height: ${randomModel.height}');
   } else {
-    print("Request Faild with status: ${response.statusCode}");
+    debugPrint("Request Faild with status: ${response.statusCode}");
   }
 }

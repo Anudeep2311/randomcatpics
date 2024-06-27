@@ -85,7 +85,7 @@ class HomeScreen extends StatelessWidget {
         );
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text("Error saving image")));
     }
